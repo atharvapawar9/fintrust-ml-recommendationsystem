@@ -158,4 +158,21 @@ Run the connection test script:
 ```powershell
 .\test-connection.ps1
 ```
+## Files Required
+
+The following files must be present:
+- `main.py` - Main FastAPI application
+- `Database.py` - Database module
+- `ml.py` - Machine learning module
+- `.env` - Environment configuration
+- `Requirements.txt` - Python dependencies
+- `cibil_database.csv` - CIBIL score data
+- `merged_training_dataset.csv` - Training data
+- **Model files (.pkl)**:
+  - `eligibility_model.pkl`
+  - `product_model.pkl`
+  - `amount_model.pkl`
+  - `tenure_model.pkl`
+  - `rate_model.pkl`
+  - `label_encoders.pkl`
 
