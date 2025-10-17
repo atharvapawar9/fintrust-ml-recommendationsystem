@@ -7,7 +7,6 @@ import joblib
 import logging
 import os
 
-# Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
@@ -85,7 +84,6 @@ def train_and_save_models(data_path='merged_training_dataset.csv'):
     # 4. Tenure Model
     logging.info("Training tenure model...")
     X_tenure = eligible_df[base_features + ['Product Type_encoded', 'Loan Amount']]
-    # CORRECTED this column name to match your CSV
     y_tenure = eligible_df['Loan Tenure']
     tenure_model = RandomForestRegressor(n_estimators=100, random_state=42)
     tenure_model.fit(X_tenure, y_tenure)
@@ -93,7 +91,6 @@ def train_and_save_models(data_path='merged_training_dataset.csv'):
 
     # 5. Interest Rate Model
     logging.info("Training interest rate model...")
-    # CORRECTED this column name to match your CSV
     X_rate = eligible_df[base_features + ['Product Type_encoded', 'Loan Amount', 'Loan Tenure']]
     y_rate = eligible_df['Interest Rate']
     rate_model = RandomForestRegressor(n_estimators=100, random_state=42)
